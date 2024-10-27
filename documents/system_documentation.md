@@ -19,7 +19,7 @@ total amount of data the database needs to store is 1M * 1KB = 1TB per quiz.
 
 ## Architecture diagram
 
-![System Architecture](./documents/system_architecture.png)
+![System Architecture](./system_architecture.png)
 
 The architecture includes below components:
 - Clients: The user interface of the system.
@@ -42,7 +42,7 @@ The architecture includes below components:
 
 ## Detailed component description
 
-### 1. Clients
+### Clients
 
 #### Description
 - The user interface of the system for the users to play the quiz.
@@ -53,7 +53,7 @@ The architecture includes below components:
 - Mobile App: The mobile app is built with any modern mobile frameworks, such as
   React Native, Flutter, etc.
 
-### 2. API Gateway
+### API Gateway
 
 #### Description
 - The API Gateway is the entry point for all requests to the system.
@@ -73,7 +73,7 @@ The architecture includes below components:
 - Nginx is used as the API Gateway because it is a high-performance web server
 that can handle a large number of requests per second.
 
-### 3. Backend services (Quiz service, Score service, Leaderboard service, Streaming service)
+### Backend services (Quiz service, Score service, Leaderboard service, Streaming service)
 
 #### Description
 - The backend services are responsible for handling all services related to
@@ -95,7 +95,7 @@ the message from clients.
 easy to scale, have a large community support, have a mature ecosystem and easy
 to develop.
 
-### 4. Message broker
+### Message broker
 
 #### Description
 - Handling the communication among the services.
@@ -106,11 +106,9 @@ the clients.
 - Kafka, RabbitMQ, etc.
 
 #### Justification
-- In this case, we need to communicate among the services, so Kafka is a good choice
-because it is a distributed streaming platform that can handle a large number of
-messages per second, and also supports the publish-subscribe model.
 
-### 5. Caching database
+
+### Caching database
 
 #### Description
 - The in-memory data store to handle the real-time score data of the users.
@@ -125,7 +123,7 @@ data store and also supports `Sorted Set` data type which is efficient for these
 kinds of problems regarding to the leaderboard.
 
 
-### 6. On-disk database
+### On-disk database
 
 #### Description
 - The relational database to store the quiz, user, and score data of users.
@@ -140,7 +138,7 @@ expired.
 - Using MySQL is a properly good choice and familiar to most of the developers.
 
 
-### 7. Serverless function
+### Serverless function
 
 #### Description
 - The serverless function to handle the synchronization of the leaderboard data

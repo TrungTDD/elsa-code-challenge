@@ -1,0 +1,7 @@
+fastapi==0.111.0
+uvicorn==0.32.0
+redis==5.0.7
+aio-pika==9.4.3
+websocket==0.2.1
+pydantic==2.5.2
+pydantic_settings==2.0.2
